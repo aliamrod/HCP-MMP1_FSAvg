@@ -10,8 +10,7 @@ This repository resamples HCP-MM1 atlas from HCP fs_LR (32k) to FreeSurfer fsave
 (1) Download required files:
 * HCP MMP1.0 dlabel.nii (from [BALSA](https://balsa.wustl.edu/WN56))
 * 
-* Sphere registration files (from [HCP GitHub]([url](https://github.com/Washington-University/HCPpipelines/tree/master/global/templates/standard_mesh_atlases)
-* ))
+* Sphere registration files (from [HCP GitHub](https://github.com/Washington-University/HCPpipelines/tree/master/global/templates/standard_mesh_atlases))
 
 
 
