@@ -19,6 +19,6 @@ These can be used in FreeSurfer or nibabel for analysis.
 **Dependencies**
 * Connectome Workbench (wb_command)
 * FreeSurfer (mris_convert, mri_surf2surf)
-
-
 ***
+
+HCP MMP atlas is originally in `fs_LR 32k` mesh (Human Connectome Project's surface format), while FreeSurfer utilizes `fsaverage` (high-res, ~164k vertices/hemisphere) and `fsaverage5` (low-res, ~10,242 vertices/hemisphere). Thus, resampling first to _fsaverage_ ensures proper alignment between HCP and FreeSurfer coordinate systems because their spherical mappings differ. _fsaverage_ acts as a bridge -- _mri_surf2surf_ is optimized for downsampling from _fsaverage_ → _fsaverage5_, and skipping this step risks misalignmnet. Sphere files (e.g., `L.sphere.32k_fs_LR.surf.gii`) define vertex mappings between surfaces, enabling accurate interpolation (e.g., barycentric warping) by ensuring anatomical correspondence (e.g., V1 in HCP matches V1 in FreeSurfer). While direct _fs_LR_ → _fsaverage5_ conversion is possible, it may distort parcels due to registration mismatches. 
